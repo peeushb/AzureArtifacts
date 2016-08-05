@@ -10,6 +10,6 @@
     "iconUri": "",
     "targetOsType": "Windows",
     "runCommand": {
-        "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File enableDisk.ps1"
+        "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File startSetup.ps1"
     }
 }
