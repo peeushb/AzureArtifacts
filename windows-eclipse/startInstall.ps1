@@ -34,8 +34,9 @@ $group.add("WinNT://$env:ComputerName/$userName")
 $secPassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\$($username)", $secPassword)
 
-$command = $PSScriptRoot + "\SetupMaven.ps1"
+$command = $PSScriptRoot + "\SetupEclipse.ps1"
 
+# Run Eclipse installer as the artifactInstaller user
 Enable-PSRemoting –Force -SkipNetworkProfileCheck
 
 # Ensure that current process can run scripts. 

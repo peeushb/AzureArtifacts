@@ -1,4 +1,4 @@
-New-Item "c:\temp" -ItemType Directory
+New-Item "C:\temp" -ItemType Directory
 Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/eclipse-jee-neon-R-win32-x86_64.zip" -OutFile "C:\temp\eclipse.zip"
 New-Item "C:\eclipse" -ItemType Directory
 Expand-Archive -Path "C:\temp\eclipse.zip" -DestinationPath "C:\eclipse"
