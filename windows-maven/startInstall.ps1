@@ -36,6 +36,7 @@ $credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTE
 
 $command = $PSScriptRoot + "\SetupMaven.ps1"
 
+# Run Maven installer as the artifactInstaller user
 Enable-PSRemoting –Force -SkipNetworkProfileCheck
 
 # Ensure that current process can run scripts. 
