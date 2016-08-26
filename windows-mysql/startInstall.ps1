@@ -34,9 +34,9 @@ $group.add("WinNT://$env:ComputerName/$userName")
 $secPassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\$($username)", $secPassword)
 
-$command = $PSScriptRoot + "\setupDisk.ps1"
+$command = $PSScriptRoot + "\SetupMysql.ps1"
 
-# Run script as the artifactInstaller user
+# Run Mysql as the artifactInstaller user
 Enable-PSRemoting –Force -SkipNetworkProfileCheck
 
 # Ensure that current process can run scripts. 

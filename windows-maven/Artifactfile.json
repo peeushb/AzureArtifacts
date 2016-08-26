@@ -1,0 +1,15 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+    "title": "Apache Maven",
+    "publisher": "Peeush Bajpai",
+    "description": "Installs Apache Maven with default options",
+    "tags": [
+        "Windows",
+        "Apache-Maven"
+    ],
+    "iconUri": "",
+    "targetOsType": "Windows",
+    "runCommand": {
+        "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File SetupMaven.ps1"
+    }
+}
