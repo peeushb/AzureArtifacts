@@ -3,17 +3,22 @@ New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
 Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/eclipse-jee-neon-R-win32-x86_64.zip" -OutFile "C:\temp\eclipse.zip"
 
 # Extract Eclipse files to new folder
-New-Item "C:\eclipse" -ItemType Directory
-Expand-Archive -Path "C:\temp\eclipse.zip" -DestinationPath "C:\eclipse"
+$shell = New-Object -com shell.application
+$zip = $shell.NameSpace("C:\temp\eclipse.zip")
+foreach($item in $zip.items())
+{
+    $shell.Namespace("C:\").copyhere($item)
+}
 
 # Update PATH Environment variable
-$oldPath=(Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINESystemCurrentControlSetControlSession ManagerEnvironment" -Name PATH).Path
+$Reg = "Registry::HKLM\System\CurrentControlSet\Control\Session Manager\Environment"
+$oldPath=(Get-ItemProperty -Path "$Reg" -Name PATH).Path
 $newPath=$oldPath+";C:\eclipse"
-Set-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINESystemCurrentControlSetControlSession ManagerEnvironment" -Name PATH –Value $newPath
+Set-ItemProperty -Path "$Reg" -Name PATH -Value $newPath
 
 # Create a Shortcut with Windows PowerShell
 $TargetFile = "C:\eclipse\eclipse.exe"
-$ShortcutFile = "$env:Public\Desktop\Notepad.lnk"
+$ShortcutFile = "$env:Public\Desktop\Eclipse.lnk"
 $WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WScriptShell.CreateShortcut($ShortcutFile)
 $Shortcut.TargetPath = $TargetFile
