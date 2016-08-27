@@ -1,5 +1,5 @@
 # Create temp directory
-New-Item "C:\temp" -ItemType Directory
+New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
 
 # Download and install Mysql installer
 Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/mysql-installer-community-5.7.14.0.msi" -OutFile "c:\temp\mysql.msi"
