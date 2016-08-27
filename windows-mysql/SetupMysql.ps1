@@ -10,8 +10,8 @@ Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/vcredi
 Start-Process "C:\temp\vcredist.exe" -ArgumentList "/S" -Wait
 
 # Install Mysql products
-Start-Process "C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe" -ArgumentList "install -type=Full -silent" -Wait
-Start-Process "C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe" -ArgumentList "configure server:rootpasswd=password;servicename=MySQL -silent" -Wait
+Start-Process "C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe" -ArgumentList "community install -type=Full -silent" -Wait
+Start-Process "C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe" -ArgumentList "community configure server:rootpasswd=password;servicename=MySQL -silent" -Wait
 
 # Grant all permission to root
-Start-Process "C:\Program Files (x86)\MySQL\MySQL Server 5.7\bin\mysql -u root -ppassword -e ""grant all privileges on *.* to root@'localhost'""";
+Start-Process "C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -ArgumentList "-u root -ppassword -e ""grant all privileges on *.* to root@'localhost'""";
