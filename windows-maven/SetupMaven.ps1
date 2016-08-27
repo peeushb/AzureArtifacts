@@ -1,4 +1,4 @@
-New-Item "C:\temp" -ItemType Directory
+New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
 Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/apache-maven-3.3.9-bin.zip" -OutFile "C:\temp\maven.zip"
 New-Item "C:\maven" -ItemType Directory
 Expand-Archive -Path "C:\temp\maven.zip" -DestinationPath "C:\maven"
