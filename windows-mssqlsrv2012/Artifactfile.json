@@ -1,11 +1,11 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
-    "title": "Mysql",
+    "title": "MS SQL Server 2012 SP3 Ent",
     "publisher": "Peeush Bajpai",
     "description": "Installs MS SQL Server 2012 SP3 and tools with default options",
     "tags": [
         "Windows",
-        "MS SQL Server 2012 SP3"
+        "MS SQL Server 2012 SP3 Enterprise Edition"
     ],
     "iconUri": "",
     "targetOsType": "Windows",
