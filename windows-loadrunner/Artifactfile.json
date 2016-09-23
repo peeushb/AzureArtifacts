@@ -1,0 +1,15 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+    "title": "Loadrunner",
+    "publisher": "Peeush Bajpai",
+    "description": "Installs Loadrunner with default options",
+    "tags": [
+        "Windows",
+        "Loadrunner"
+    ],
+    "iconUri": "",
+    "targetOsType": "Windows",
+    "runCommand": {
+        "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File startInstall.ps1"
+    }
+}
