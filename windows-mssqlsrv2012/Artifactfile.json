@@ -1,11 +1,11 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
-    "title": "MS SQL Server 2012 SP3 Ent",
+    "title": "MS SQL Server 2012 SP3 Ent - Shortcut",
     "publisher": "Peeush Bajpai",
-    "description": "Installs MS SQL Server 2012 SP3 and tools with default options",
+    "description": "Creates Shortcut for MS SQL Server 2012 SP3",
     "tags": [
         "Windows",
-        "MS SQL Server 2012 SP3 Enterprise Edition"
+        "MS SQL Server 2012 SP3 Enterprise Edition - Shortcut"
     ],
     "iconUri": "",
     "targetOsType": "Windows",
