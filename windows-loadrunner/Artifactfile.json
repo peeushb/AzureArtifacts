@@ -1,11 +1,11 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
-    "title": "Loadrunner",
+    "title": "Adobe Reader 11",
     "publisher": "Peeush Bajpai",
-    "description": "Installs Loadrunner with default options",
+    "description": "Installs Adobe Reader 11 with default options",
     "tags": [
         "Windows",
-        "Loadrunner"
+        "Adob Reader11"
     ],
     "iconUri": "",
     "targetOsType": "Windows",

@@ -34,9 +34,9 @@ $group.add("WinNT://$env:ComputerName/$userName")
 $secPassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\$($username)", $secPassword)
 
-$command = $PSScriptRoot + "\SetupLoadrunner.ps1"
+$command = $PSScriptRoot + "\SetupAcrobatReader.ps1"
 
-# Run Loadrunner install as the artifactInstaller user
+# Run Acrobat Reader install as the artifactInstaller user
 Enable-PSRemoting –Force -SkipNetworkProfileCheck
 
 # Ensure that current process can run scripts. 
