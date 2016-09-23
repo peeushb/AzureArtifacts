@@ -1,0 +1,15 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+    "title": "Office365",
+    "publisher": "Peeush Bajpai",
+    "description": "Installs Office365 with default options",
+    "tags": [
+        "Windows",
+        "Office365"
+    ],
+    "iconUri": "",
+    "targetOsType": "Windows",
+    "runCommand": {
+        "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File startInstall.ps1"
+    }
+}
