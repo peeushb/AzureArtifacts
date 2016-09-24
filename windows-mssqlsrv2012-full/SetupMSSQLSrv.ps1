@@ -1,6 +1,15 @@
 # Create temp directory
 New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
-Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/SQLServer_11.0_Full" -OutFile "C:\temp\SQLServer_11.0_Full"
+Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/SQLServer_11.0_Full.zip" -OutFile "C:\temp\SQLServer_11.0_Full.zip"
+
+# Extract SQL Server files to new folder
+$shell = New-Object -com shell.application
+$zip = $shell.NameSpace("C:\temp\SQLServer_11.0_Full.zip")
+New-Item "c:\temp\SQLServer_11.0_Full" -ItemType Directory -ErrorAction SilentlyContinue
+Foreach($item In $zip.items())
+{
+    $shell.Namespace("C:\temp\SQLServer_11.0_Full").Copyhere($item)
+}
 
 # Get Machine name
 $VMName = hostname
