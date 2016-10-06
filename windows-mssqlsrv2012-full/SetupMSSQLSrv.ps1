@@ -6,10 +6,10 @@ New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
 # Extract SQL Server files to new folder
 $shell = New-Object -com shell.application
 $zip = $shell.NameSpace("C:\temp\SQLServer_11.0_Full.zip")
-New-Item "c:\temp\SQLServer_11.0_Full" -ItemType Directory -ErrorAction SilentlyContinue
+#New-Item "c:\temp\SQLServer_11.0_Full" -ItemType Directory -ErrorAction SilentlyContinue
 Foreach($item In $zip.items())
 {
-    $shell.Namespace("C:\temp\SQLServer_11.0_Full").Copyhere($item)
+    $shell.Namespace("C:\temp").Copyhere($item)
 }
 
 # Get Machine name
