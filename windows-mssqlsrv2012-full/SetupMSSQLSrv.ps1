@@ -1,6 +1,7 @@
 # Create temp directory
 New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
-Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/SQLServer_11.0_Full.zip" -OutFile "C:\temp\SQLServer_11.0_Full.zip"
+(New-Object System.Net.WebClient).DownloadFile("https://spvlabtemplates.blob.core.windows.net/software/SQLServer_11.0_Full.zip", "C:\temp\SQLServer_11.0_Full.zip")
+#Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/SQLServer_11.0_Full.zip" -OutFile "C:\temp\SQLServer_11.0_Full.zip"
 
 # Extract SQL Server files to new folder
 $shell = New-Object -com shell.application
