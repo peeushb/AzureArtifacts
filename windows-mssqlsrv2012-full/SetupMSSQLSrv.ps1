@@ -1,25 +1,25 @@
 # Create temp directory
-New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
-(New-Object System.Net.WebClient).DownloadFile("https://spvlabtemplates.blob.core.windows.net/software/SQLServer_11.0_Full.zip", "C:\temp\SQLServer_11.0_Full.zip")
+#New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
+#(New-Object System.Net.WebClient).DownloadFile("https://spvlabtemplates.blob.core.windows.net/software/SQLServer_11.0_Full.zip", "C:\temp\SQLServer_11.0_Full.zip")
 #Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/SQLServer_11.0_Full.zip" -OutFile "C:\temp\SQLServer_11.0_Full.zip"
 
 # Extract SQL Server files to new folder
-$shell = New-Object -com shell.application
-$zip = $shell.NameSpace("C:\temp\SQLServer_11.0_Full.zip")
+#$shell = New-Object -com shell.application
+#$zip = $shell.NameSpace("C:\temp\SQLServer_11.0_Full.zip")
 #New-Item "c:\temp\SQLServer_11.0_Full" -ItemType Directory -ErrorAction SilentlyContinue
-Foreach($item In $zip.items())
-{
-    $shell.Namespace("C:\temp").Copyhere($item)
-}
+#Foreach($item In $zip.items())
+#{
+#    $shell.Namespace("C:\temp").Copyhere($item)
+#}
 
 # Get Machine name
 $VMName = hostname
-$INSTANCENAME = $VMName.replace("-","").ToUpper() + "-SQLSRV"
+#$INSTANCENAME = $VMName.replace("-","").ToUpper() + "-SQLSRV"
 $SQLSVCACCOUNT = $VMName + "\LabAdmin" 
 $SQLSVCPASSWORD = "Welcome123!"
 $SQLSYSADMINACCOUNTS = $SQLSVCACCOUNT 
 
-$ArgumentList = "/Q /ACTION=Install QUIET=True /FEATURES=SQLENGINE /INSTANCENAME=" + $INSTANCENAME + " /SQLSVCACCOUNT=" + $SQLSVCACCOUNT + " /SQLSVCPASSWORD=" + 
+$ArgumentList = "/Q /ACTION=Install QUIET=True /FEATURES=SQLENGINE /SQLSVCACCOUNT=" + $SQLSVCACCOUNT + " /SQLSVCPASSWORD=" + 
     $SQLSVCPASSWORD + " /SQLSYSADMINACCOUNTS=" + $SQLSYSADMINACCOUNTS + " /AGTSVCACCOUNT=""NT AUTHORITY\Network Service"" /UpdateEnabled=0 /IACCEPTSQLSERVERLICENSETERMS /AGTSVCSTARTUPTYPE=Automatic /SQLSVCSTARTUPTYPE=Automatic"
 
 # Install MS SQL Server
