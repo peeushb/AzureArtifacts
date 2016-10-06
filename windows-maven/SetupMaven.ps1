@@ -2,7 +2,8 @@
 New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
 
 # Download and install Maven
-Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/apache-maven-3.3.9-bin.zip" -OutFile "C:\temp\maven.zip"
+(New-Object System.Net.WebClient).DownloadFile("https://spvlabtemplates.blob.core.windows.net/software/apache-maven-3.3.9-bin.zip", "C:\temp\maven.zip")
+#Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/apache-maven-3.3.9-bin.zip" -OutFile "C:\temp\maven.zip"
 
 # Extract Maven files to new folder
 $shell = New-Object -com shell.application

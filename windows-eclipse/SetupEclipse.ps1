@@ -1,6 +1,7 @@
 # Create temp directory
 New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
-Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/eclipse-jee-luna-SR2-win32-x86_64.zip" -OutFile "C:\temp\eclipse-luna.zip"
+(New-Object System.Net.WebClient).DownloadFile("https://spvlabtemplates.blob.core.windows.net/software/eclipse-jee-luna-SR2-win32-x86_64.zip", "C:\temp\eclipse-luna.zip")
+#Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/eclipse-jee-luna-SR2-win32-x86_64.zip" -OutFile "C:\temp\eclipse-luna.zip"
 
 # Extract Eclipse files to new folder
 $shell = New-Object -com shell.application

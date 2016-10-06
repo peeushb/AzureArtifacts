@@ -2,11 +2,13 @@
 New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
 
 # Download and install Mysql installer
-Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/mysql-installer-community-5.7.14.0.msi" -OutFile "c:\temp\mysql.msi"
+(New-Object System.Net.WebClient).DownloadFile("https://spvlabtemplates.blob.core.windows.net/software/mysql-installer-community-5.7.14.0.msi", "C:\temp\mysql.msi")
+#Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/mysql-installer-community-5.7.14.0.msi" -OutFile "c:\temp\mysql.msi"
 Start-Process 'msiexec' -ArgumentList '/i "C:\temp\mysql.msi" /quiet /log C:\temp\mysql-install.log' -Wait
 
 # Download and install pre-requisite software
-Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/vcredist_x64.exe" -OutFile "c:\temp\vcredist.exe"
+(New-Object System.Net.WebClient).DownloadFile("https://spvlabtemplates.blob.core.windows.net/software/vcredist_x64.exe", "C:\temp\vcredist.exe")
+#Invoke-WebRequest "https://spvlabtemplates.blob.core.windows.net/software/vcredist_x64.exe" -OutFile "c:\temp\vcredist.exe"
 Start-Process "C:\temp\vcredist.exe" -ArgumentList "/S" -Wait
 
 # Install Mysql products
