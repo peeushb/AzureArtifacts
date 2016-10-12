@@ -1,0 +1,15 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+    "title": "Schedule Task - Shutdown on Disconnect",
+    "publisher": "Peeush Bajpai",
+    "description": "Schedules Task to shutdown machine on user session disconnect",
+    "tags": [
+        "Windows",
+        "Schedule-Task-Shutdown"
+    ],
+    "iconUri": "",
+    "targetOsType": "Windows",
+    "runCommand": {
+        "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File startInstall.ps1"
+    }
+}
