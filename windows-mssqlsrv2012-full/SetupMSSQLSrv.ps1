@@ -16,8 +16,7 @@ Foreach($item In $zip.items())
 $VMName = hostname
 #$INSTANCENAME = $VMName.replace("-","").ToUpper() + "SQLSRV"
 $INSTANCENAME = "MSSQLSERVER"
-$SQLSVCACCOUNT = $VMName + "\LabAdmin" 
-#$SQLSVCACCOUNT = "$env:COMPUTERNAME\" + "LabAdmin" 
+$SQLSVCACCOUNT = "$env:COMPUTERNAME\" + "LabAdmin" 
 $SQLSVCPASSWORD = "Welcome123!"
 $SQLSYSADMINACCOUNTS = $SQLSVCACCOUNT 
 
