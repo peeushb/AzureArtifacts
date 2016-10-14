@@ -4,6 +4,5 @@ New-Item "C:\temp" -ItemType Directory -ErrorAction SilentlyContinue
 
 # Import task
 $xmlfile = "C:\temp\Auto-shutdownon-on-disconnect.xml"
-$VMName = hostname
-$UserName = $VMName + "\LabAdmin"
+$UserName = "$env:COMPUTERNAME\" + "LabAdmin"
 schtasks /Create /XML $xmlfile /RU $UserName /RP "Welcome123!" /TN "Auto shutdown on disconnect"
